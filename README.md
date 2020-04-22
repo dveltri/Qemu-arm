@@ -18,3 +18,4 @@ Docker for run FreeRtos with qemu-arm-cortex
 
  ## Creditos
  - http://roboticravings.blogspot.com/2018/07/freertos-on-cortex-m3-with-qemu.html
+ - https://docs.zephyrproject.org/1.10.0/boards/arm/qemu_cortex_m3/doc/board.html
