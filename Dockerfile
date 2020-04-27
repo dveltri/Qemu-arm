@@ -18,7 +18,7 @@ RUN git submodule update --init --recursive
 WORKDIR /FreeRTOS/FreeRTOS/Source
 RUN git checkout master && git pull
 WORKDIR /FreeRTOS/FreeRTOS/Demo/Posix_GCC/
-RUN scons
+RUN scons --simple --coverage
 #--------------------------------------------
 WORKDIR /
 RUN wget http://interactive.freertos.org/attachments/token/r6d5gt3998niuc4/?name=Posix_GCC_Simulator_6.0.4.zip
