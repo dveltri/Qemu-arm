@@ -1,21 +1,20 @@
-# Qemu-arm
-Docker for run FreeRtos with qemu-arm-cortex
+# FreeRtos Posix
+Docker for compile FreeRtos in posix ARCH
+the docker download 2 versions of FreeRtos compile both 
+
+ - 6.0.4 in `/Posix_GCC_Simulator/FreeRTOS_Posix/Debug/*FreeRTOS_posix` 
+ - 10.3.1 in `/FreeRTOS/FreeRTOS/Demo/Posix_GCC/build/*posix_demo`
 
 ### Comandos utiles
  - dbuild.sh
- - create_container.sh
- - docker run --name qemu -e SEND_HOST="localhost" qemu:latest
- - docker start qemu
- - docker stop qemu
- - dbash.sh qemu
- - arm-none-eabi-gdb -ex="target remote localhost:1234"
+Crea la imagen de docker bajando los fuentes y compilandolos
+ - dbash.sh si no existe el container lo crea y si existe lo levanta y lo corre
 
 ### Iniciar el firmware
- - qemu-system-arm -nographic -serial mon:stdio -machine lm3s811evb -kernel RTOSDemo.bin -s -S
+ - 6.0.4   `/Posix_GCC_Simulator/FreeRTOS_Posix/Debug/./FreeRTOS_posix`
+ - 10.3.1  `/FreeRTOS/FreeRTOS/Demo/Posix_GCC/build/./posix_demo`
 
 ### Debuger 
- - - arm-none-eabi-gdb -ex="target remote localhost:1234"
+
 
  ## Creditos
- - http://roboticravings.blogspot.com/2018/07/freertos-on-cortex-m3-with-qemu.html
- - https://docs.zephyrproject.org/1.10.0/boards/arm/qemu_cortex_m3/doc/board.html

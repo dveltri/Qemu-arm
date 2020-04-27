@@ -1,1 +1,1 @@
-sudo docker build -t qemu:latest .
+docker build -t posix:latest .
