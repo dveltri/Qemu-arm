@@ -15,5 +15,6 @@ echo "stoping jlink"
 docker stop jlink
 else
 echo "creating and run container jlink"
-docker run --name jlink -v ${REPO_PATH}:${PWD} -i -w / -t jlink:latest
+#docker run --name jlink -v ${REPO_PATH}:${PWD} -i -w / -t jlink:latest
+docker run --name jlink --privileged -v /dev/bus/usb/:/dev/bus/usb -i -w / -t jlink:latest
 fi

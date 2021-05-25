@@ -8,14 +8,14 @@ RUN apt-get install -y binutils
 RUN apt-get install -y gdb
 RUN apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi gdb-arm-none-eabi openocd
 RUN apt-get install -y make
-#RUN apt-get install -y scons
 RUN apt-get install -y libcurl3
+RUN apt-get install -y usbutils
 #--------------------------------------------
 WORKDIR /
 ADD ./tools/jlinkexe.sh /
-RUN wget https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
-RUN dpkg -i /home/JLink_Linux_V647f_x86_64.deb
+ADD JLink_Linux_V720b_x86_64.deb /
+RUN dpkg -i JLink_Linux_V720b_x86_64.deb
 #--------------------------------------------
-ADD docker-entrypoint.sh /
-EXPOSE 1234 80
+# ADD docker-entrypoint.sh /
+# EXPOSE 1234 80
 #ENTRYPOINT ["/./docker-entrypoint.sh"]
