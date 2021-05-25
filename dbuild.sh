@@ -1,1 +1,2 @@
-docker build -t posix:latest .
+#!/bin/bash
+docker build -t jlink:latest .

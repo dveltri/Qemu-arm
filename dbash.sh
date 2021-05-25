@@ -1,18 +1,19 @@
+#!/bin/bash
 REPO_PATH=$(git rev-parse --show-toplevel)
 
 echo $REPO_PATH
-if [[ $(docker ps -a | grep posix) ]]; then
+if [[ $(docker ps -a | grep jlink) ]]; then
 echo "existe el container"
-if [[ $(docker ps | grep posix) ]]; then
+if [[ $(docker ps | grep jlink) ]]; then
 echo "esta corriendo"
 else
-docker start posix
+docker start jlink
 fi
-echo "Entring to bash of posix"
-docker exec -it posix tmux new -s dgv
-echo "stoping posix"
-docker stop posix
+echo "Entring to bash of jlink"
+docker exec -it jlink tmux new -s dgv
+echo "stoping jlink"
+docker stop jlink
 else
-echo "creating and run container posix"
-docker run --name posix -v ${REPO_PATH}:${PWD} -i -w / -t posix:latest
+echo "creating and run container jlink"
+docker run --name jlink -v ${REPO_PATH}:${PWD} -i -w / -t jlink:latest
 fi
